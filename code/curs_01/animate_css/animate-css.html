@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animate.CSS</title>
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"></head>
+
+
+
+    <style>
+        :root{
+            /* --animate-duration:5s; */
+            /* --animate-repeat:3; */
+        }
+
+        .animate__animated.animate__wobble{
+           --animate-duration:3s;
+          /* --animate-repeat:2; */
+        }
+        .animate__animated.animate__flash{
+            --animate-delay:0.05s;
+        }
+        .patrat{
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            --animate-duration:5s;
+        }
+        .bg-albastru{
+            background-color:blue;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="animate__animated animate__flash animate__faster">An animated element</h1>
+
+    <div class="patrat bg-albastru animate__animated animate__wobble animate__repeat-3"></div>
+    
+    
+</body>
+</html>

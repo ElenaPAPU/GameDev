@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello, SVG! </title>
+
+    <style>
+.common-svg {
+    width: 500px;
+    height: 200px;
+    border: 1px solid black;
+}
+
+
+    </style>
+</head>
+<body>
+    
+    <h1>My First SVG </h1>
+
+    <svg id="first-svg" class="common-svg">
+        <rect x="15" y="20" width="200" height="300" rx="5" ry="5" fill="#6ac20e" />
+        <circle cx="300" cy="100" r="70" fill="purple"></circle>
+        <line x1="1" y1="1" x2="499" y2="1" style="stroke:red; stroke-width:10;" />
+        <line x1="1" y1="199" x2="499" y2="199" style="stroke:red; stroke-width:10;" />
+        <text x="380" y="100" rotate="10" style="font-size: 30px">Salut, SVG!</text>
+    </svg>
+
+    <svg id="second-svg" class="common-svg">
+        <path d="M10 10 L490 10 L10 190 L490 190 M370 100 L130 100 " fill="white" style=" stroke: red; stroke-width: 5;"> />
+
+    </svg>
+</body>
+</html>

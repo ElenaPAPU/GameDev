@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anime JS</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+
+    <style>
+          .patrat{
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            position:relative;
+        }
+
+        .dreptunghi{
+          width: 100px;
+          height: 50px;
+          border: 1px solid black;
+          position:relative;
+        }
+
+        .bg-albastru{
+            background-color:blue;
+        }
+        .spatiere{
+          margin-top: 150px;
+        }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="patrat bg-albastru"></div>
+    <div class="patrat bg-albastru"></div>
+
+    <div class="dreptunghi bg-albastru"></div>
+
+    <div class="spatiere">&nbsp;</div>
+
+    <section>
+      <h2>Number of clients: <span id="no_clients"></span></h2>
+    </section>
+
+    <button id="clients_count">Count Clients</button>
+    
+    <script>
+      const dreptunghiulMeu=document.querySelector('div.dreptunghi');
+       
+      const myAnimation = {
+        // targets: document.querySelectorAll("div.patrat"),
+        targets: ['div.patrat', dreptunghiulMeu],
+        left: '270px',
+        easing:'steps(10)',
+        translateX: 270,
+        backgroundColor: '#ff0000',
+        scale:3,
+        rotate:'1turn',
+        duration: 5 * 1000,
+        // borderRadius: ['0%', '50%'],
+        // delay: anime.stagger(50),
+        // loop: true,
+        // direction: 'alternate',
+      };
+
+      anime(myAnimation);
+
+      // random number of clients
+      const noClientsAnimation = {
+        targets: document.getElementById('no_clients'),
+        innerHTML:[0, 1000],
+        easing:'linear',
+        round:1,
+        autoplay:false
+      };
+     const clientsAnimation = anime(noClientsAnimation);
+
+     const triggerClientsAnimation = document.getElementById('clients_count'); 
+
+     let clientsAnimationStarted = false;
+
+     function toggleClientsAnimation() {
+        if(clientsAnimationStarted == false) {
+          clientsAnimation.play();
+        clientsAnimationStarted = true;
+
+    }
+    else {
+      clientsAnimation.pause();
+      clientsAnimationStarted = false;
+    }
+     }
+
+
+     triggerClientsAnimation.onclick = toggleClientsAnimation;
+    //  triggerClientsAnimation.onclick = clientsAnimation.stop;
+
+
+    </script>
+  </body>
+</html>
