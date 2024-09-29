@@ -1,0 +1,5 @@
+<main id="game">
+<div class="player player {{player.walkSprite}} " 
+[ngClass]="player.looksRight ? 'playerToRight' : 'playerToLeft'" 
+[ngStyle]="{'left': player.posOx + 'px'}"></div>
+</main>
